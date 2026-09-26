@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Rupsha ❤️</title>
+<title>For Rupsha</title>
 
 <style>
 * {
@@ -36,7 +36,7 @@ body {
 .card {
   width: 100%;
   max-width: 430px;
-  background: rgba(255,255,255,.94);
+  background: rgba(255,255,255,.95);
   border-radius: 28px;
   padding: 30px 20px;
   box-shadow: 0 15px 45px rgba(130,40,70,.15);
@@ -95,19 +95,19 @@ p {
 
 .buttons {
   position: relative;
-  min-height: 95px;
+  min-height: 100px;
   margin-top: 25px;
 }
 
 #yesBtn {
   position: absolute;
-  left: 15%;
+  left: 12%;
   top: 10px;
 }
 
 #noBtn {
   position: absolute;
-  right: 15%;
+  right: 12%;
   top: 10px;
   transition: .15s;
 }
@@ -175,6 +175,11 @@ p {
   cursor: pointer;
 }
 
+.surprise.selected {
+  background: #f8cddd;
+  border-color: #c83f6b;
+}
+
 .next {
   width: 100%;
   margin-top: 22px;
@@ -230,18 +235,29 @@ input {
 }
 
 @keyframes heartbeat {
-  0%,100% {transform:scale(1)}
-  50% {transform:scale(1.15)}
+  0%,100% { transform:scale(1); }
+  50% { transform:scale(1.15); }
 }
 
 @keyframes fade {
-  from {opacity:0;transform:translateY(10px)}
-  to {opacity:1;transform:translateY(0)}
+  from {
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
-@media(max-width:360px){
-  .food img {height:90px}
-  h1 {font-size:27px}
+@media(max-width:360px) {
+  .food img {
+    height:90px;
+  }
+
+  h1 {
+    font-size:27px;
+  }
 }
 </style>
 </head>
@@ -258,11 +274,11 @@ input {
 <h1>Hey Rupsha...</h1>
 
 <p class="romantic">
-Some moments become beautiful simply because they're shared with someone special. 🌹
+Some moments become beautiful simply because they're shared with someone special.
 </p>
 
 <button class="btn primary" onclick="show('question')">
-I have a question for you... 💌
+I have a question for you...
 </button>
 
 </div>
@@ -279,21 +295,23 @@ I have a question for you... 💌
 <h1>Rupsha...</h1>
 
 <p style="font-size:20px;">
-Would you go on a date with me? ❤️
+Would you go on a date with me?
 </p>
 
 <div class="buttons">
+
 <button class="btn primary" id="yesBtn" onclick="show('food')">
-YES ❤️
+YES
 </button>
 
 <button class="btn secondary" id="noBtn">
-NO 🙈
+NO
 </button>
+
 </div>
 
 <p style="font-size:13px;margin-top:10px;">
-Choose carefully 👀
+Choose carefully...
 </p>
 
 </div>
@@ -305,66 +323,88 @@ Choose carefully 👀
 <section class="screen" id="food">
 <div class="card">
 
-<h2>Okay Rupsha 😌❤️</h2>
+<h2>Okay Rupsha...</h2>
 
 <p>
 Now the really important question...
 </p>
 
 <h2 style="margin-top:12px;">
-What are you craving? 🍽️
+What are you craving?
 </h2>
 
 <div class="food-grid">
 
 <div class="food" data-name="Pizza" onclick="selectFood(this)">
-<img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80">
+<img
+src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80"
+alt="Pizza">
 <span>🍕 Pizza</span>
 </div>
 
 <div class="food" data-name="Burger" onclick="selectFood(this)">
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80">
+<img
+src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
+alt="Burger">
 <span>🍔 Burger</span>
 </div>
 
 <div class="food" data-name="Pasta" onclick="selectFood(this)">
-<img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=500&q=80">
+<img
+src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=500&q=80"
+alt="Pasta">
 <span>🍝 Pasta</span>
 </div>
 
 <div class="food" data-name="Fried Chicken" onclick="selectFood(this)">
-<img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=500&q=80">
+<img
+src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=500&q=80"
+alt="Fried Chicken">
 <span>🍗 Fried Chicken</span>
 </div>
 
 <div class="food" data-name="Chinese" onclick="selectFood(this)">
-<img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=500&q=80">
+<img
+src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=500&q=80"
+alt="Chinese">
 <span>🥡 Chinese</span>
 </div>
 
+<!-- CORRECT FUCHKA -->
+
 <div class="food" data-name="Fuchka" onclick="selectFood(this)">
-<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80">
+<img
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fuchka%20by%20Mahbub%20Hasan.JPG"
+alt="Bangladeshi Fuchka">
 <span>🥙 Fuchka</span>
 </div>
 
+<!-- CORRECT CHOTPOTI -->
+
 <div class="food" data-name="Chotpoti" onclick="selectFood(this)">
-<img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=500&q=80">
+<img
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chotpoti%20%28cropped%29.jpg"
+alt="Bangladeshi Chotpoti">
 <span>🥣 Chotpoti</span>
 </div>
 
+<!-- DESSERT -->
+
 <div class="food" data-name="Dessert" onclick="selectFood(this)">
-<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=500&q=80">
+<img
+src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80"
+alt="Dessert">
 <span>🍰 Dessert</span>
 </div>
 
 </div>
 
 <div class="surprise" onclick="surpriseMe(this)">
-🎁 Surprise me ❤️
+🎁 Surprise me
 </div>
 
 <button class="btn primary next" onclick="foodNext()">
-Continue ❤️
+Continue
 </button>
 
 </div>
@@ -381,21 +421,27 @@ Continue ❤️
 <h1>When are you free?</h1>
 
 <p>
-Pick a day that works for you. I'll take care of the rest. ❤️
+Pick a day that works for you. I'll take care of the rest.
 </p>
 
 <div class="inputBox">
+
 <label>📅 Choose our date</label>
+
 <input type="date" id="date">
+
 </div>
 
 <div class="inputBox">
+
 <label>🕐 What time works for you?</label>
+
 <input type="time" id="time">
+
 </div>
 
 <button class="btn primary next" onclick="finish()">
-It's a date ❤️
+It's a date
 </button>
 
 </div>
@@ -412,7 +458,7 @@ It's a date ❤️
 <h1>It's a date, Rupsha!</h1>
 
 <p>
-Well... this just made my day. 🌹
+Well... this just made my day.
 </p>
 
 <div class="summary">
@@ -436,12 +482,12 @@ Well... this just made my day. 🌹
 
 <div class="big-message">
 Be ready by <span id="readyTime"></span>,<br>
-I'm coming to get you 🚗❤️
+I'm coming to get you.
 </div>
 
 <p class="ps">
 P.S. Normal people would've just texted you.<br>
-But you're not someone I wanted to ask in a normal way. 🌹
+But you're not someone I wanted to ask in a normal way.
 </p>
 
 </div>
@@ -452,37 +498,42 @@ But you're not someone I wanted to ask in a normal way. 🌹
 
 let chosenFood = "";
 
-function show(id){
+function show(id) {
 
-document.querySelectorAll(".screen")
-.forEach(x => x.classList.remove("active"));
+  document.querySelectorAll(".screen")
+  .forEach(x => x.classList.remove("active"));
 
-document.getElementById(id).classList.add("active");
+  document.getElementById(id).classList.add("active");
 
-window.scrollTo(0,0);
-
+  window.scrollTo(0,0);
 }
+
 
 /* NO BUTTON RUNS AWAY */
 
 const noBtn = document.getElementById("noBtn");
 
-function moveNo(){
+function moveNo() {
 
-const box = document.querySelector(".buttons");
+  const box = document.querySelector(".buttons");
 
-const maxX = Math.max(0, box.clientWidth - noBtn.offsetWidth);
-const maxY = 55;
+  const maxX =
+  Math.max(0, box.clientWidth - noBtn.offsetWidth);
 
-noBtn.style.left = Math.random()*maxX+"px";
-noBtn.style.right = "auto";
-noBtn.style.top = Math.random()*maxY+"px";
+  const maxY = 60;
 
+  noBtn.style.left =
+  Math.random() * maxX + "px";
+
+  noBtn.style.right = "auto";
+
+  noBtn.style.top =
+  Math.random() * maxY + "px";
 }
 
-noBtn.addEventListener("touchstart", function(e){
-e.preventDefault();
-moveNo();
+noBtn.addEventListener("touchstart", function(e) {
+  e.preventDefault();
+  moveNo();
 });
 
 noBtn.addEventListener("mouseover", moveNo);
@@ -490,98 +541,118 @@ noBtn.addEventListener("mouseover", moveNo);
 
 /* FOOD */
 
-function selectFood(el){
+function selectFood(el) {
 
-document.querySelectorAll(".food")
-.forEach(x => x.classList.remove("selected"));
+  document.querySelectorAll(".food")
+  .forEach(x => x.classList.remove("selected"));
 
-document.querySelector(".surprise").style.background="#fff0f5";
+  document.querySelector(".surprise")
+  .classList.remove("selected");
 
-el.classList.add("selected");
+  el.classList.add("selected");
 
-chosenFood=el.dataset.name;
-
+  chosenFood = el.dataset.name;
 }
 
-function surpriseMe(el){
 
-document.querySelectorAll(".food")
-.forEach(x => x.classList.remove("selected"));
+function surpriseMe(el) {
 
-chosenFood="Surprise me ❤️";
+  document.querySelectorAll(".food")
+  .forEach(x => x.classList.remove("selected"));
 
-el.style.background="#f8cddd";
+  el.classList.add("selected");
 
+  chosenFood = "Surprise me";
 }
 
-function foodNext(){
 
-if(!chosenFood){
-alert("You have to pick something first 😌❤️");
-return;
-}
+function foodNext() {
 
-show("datetime");
+  if(!chosenFood) {
+    alert("You have to pick something first.");
+    return;
+  }
 
+  show("datetime");
 }
 
 
 /* DON'T ALLOW PAST DATE */
 
-const dateInput=document.getElementById("date");
+const dateInput =
+document.getElementById("date");
 
-const today=new Date();
+const today = new Date();
+
 const localToday =
-today.getFullYear()+"-"+
-String(today.getMonth()+1).padStart(2,"0")+"-"+
+today.getFullYear() + "-" +
+String(today.getMonth()+1).padStart(2,"0") + "-" +
 String(today.getDate()).padStart(2,"0");
 
-dateInput.min=localToday;
+dateInput.min = localToday;
 
 
 /* FINAL */
 
-function finish(){
+function finish() {
 
-const date=document.getElementById("date").value;
-const time=document.getElementById("time").value;
+  const date =
+  document.getElementById("date").value;
 
-if(!date || !time){
+  const time =
+  document.getElementById("time").value;
 
-alert("Don't leave me guessing 😭 Pick a date and time ❤️");
-return;
+  if(!date || !time) {
 
-}
+    alert("Don't leave me guessing. Pick a date and time.");
+    return;
+  }
 
-const dateObj=new Date(date+"T00:00:00");
+  const dateObj =
+  new Date(date + "T00:00:00");
 
-const niceDate=dateObj.toLocaleDateString("en-US",{
-weekday:"long",
-month:"long",
-day:"numeric",
-year:"numeric"
-});
+  const niceDate =
+  dateObj.toLocaleDateString("en-US", {
+    weekday:"long",
+    month:"long",
+    day:"numeric",
+    year:"numeric"
+  });
 
-const [hour,minute]=time.split(":");
+  const [hour, minute] =
+  time.split(":");
 
-const t=new Date();
-t.setHours(hour,minute);
+  const t = new Date();
 
-const niceTime=t.toLocaleTimeString("en-US",{
-hour:"numeric",
-minute:"2-digit"
-});
+  t.setHours(
+    Number(hour),
+    Number(minute),
+    0,
+    0
+  );
 
-document.getElementById("finalFood").textContent=chosenFood;
-document.getElementById("finalDate").textContent=niceDate;
-document.getElementById("finalTime").textContent=niceTime;
-document.getElementById("readyTime").textContent=niceTime;
+  const niceTime =
+  t.toLocaleTimeString("en-US", {
+    hour:"numeric",
+    minute:"2-digit"
+  });
 
-show("final");
+  document.getElementById("finalFood")
+  .textContent = chosenFood;
 
+  document.getElementById("finalDate")
+  .textContent = niceDate;
+
+  document.getElementById("finalTime")
+  .textContent = niceTime;
+
+  document.getElementById("readyTime")
+  .textContent = niceTime;
+
+  show("final");
 }
 
 </script>
 
 </body>
-  </html>
+</html>
