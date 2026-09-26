@@ -6,25 +6,40 @@
 <title>For Rupsha ❤️</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
+  -webkit-tap-highlight-color:transparent;
 }
 
-html{
-  scroll-behavior:smooth;
+:root{
+  --rose:#ff4f87;
+  --rose2:#ff8eaa;
+  --wine:#661b38;
+  --glass:rgba(31,10,20,.58);
+  --border:rgba(255,255,255,.16);
+  --text:#fff8fa;
+  --muted:#e9cbd5;
+}
+
+html,body{
+  min-height:100%;
 }
 
 body{
-  font-family:Arial,sans-serif;
+  font-family:'DM Sans',Arial,sans-serif;
+  color:var(--text);
   min-height:100vh;
-  color:#542233;
 
   background:
     linear-gradient(
-      rgba(65,10,30,.38),
-      rgba(160,40,80,.30)
+      180deg,
+      rgba(17,4,11,.34),
+      rgba(37,5,19,.70) 55%,
+      rgba(12,2,7,.88)
     ),
     url("IMG_20260718_161007.jpg");
 
@@ -33,12 +48,40 @@ body{
   background-attachment:fixed;
 }
 
+/* SOFT GLOW */
+
+body::before{
+  content:"";
+  position:fixed;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background:rgba(255,55,120,.22);
+  filter:blur(90px);
+  top:-80px;
+  right:-100px;
+  pointer-events:none;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:rgba(255,130,160,.15);
+  filter:blur(100px);
+  bottom:-100px;
+  left:-100px;
+  pointer-events:none;
+}
+
 /* SCREENS */
 
 .screen{
   display:none;
   min-height:100vh;
-  padding:25px 18px;
+  padding:24px 17px;
   align-items:center;
   justify-content:center;
   text-align:center;
@@ -46,139 +89,123 @@ body{
 
 .screen.active{
   display:flex;
-  animation:fade .6s ease;
+  animation:screenIn .65s ease;
 }
 
-/* ROMANTIC GLASS CARD */
+/* GLASS PANEL */
 
 .card{
+  position:relative;
   width:100%;
   max-width:430px;
 
-  background:rgba(255,245,249,.90);
+  padding:31px 20px;
 
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(53,15,31,.67),
+      rgba(18,6,13,.70)
+    );
 
-  border:1px solid rgba(255,255,255,.65);
-
+  border:1px solid var(--border);
   border-radius:30px;
 
-  padding:30px 20px;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
 
   box-shadow:
-    0 20px 50px rgba(80,10,35,.28),
-    inset 0 1px 0 rgba(255,255,255,.8);
-}
+    0 25px 60px rgba(0,0,0,.42),
+    inset 0 1px 0 rgba(255,255,255,.12);
 
-/* FLOATING HEARTS */
-
-.floating-hearts{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
   overflow:hidden;
-  z-index:-1;
 }
 
-.floating-hearts span{
+.card::before{
+  content:"";
   position:absolute;
-  bottom:-60px;
-  opacity:.65;
-  animation:floatHeart linear infinite;
+  top:0;
+  left:15%;
+  width:70%;
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,160,190,.8),
+      transparent
+    );
 }
 
-.floating-hearts span:nth-child(1){
-  left:8%;
-  font-size:22px;
-  animation-duration:9s;
-}
-
-.floating-hearts span:nth-child(2){
-  left:24%;
-  font-size:16px;
-  animation-duration:12s;
-  animation-delay:2s;
-}
-
-.floating-hearts span:nth-child(3){
-  left:48%;
-  font-size:24px;
-  animation-duration:10s;
-  animation-delay:4s;
-}
-
-.floating-hearts span:nth-child(4){
-  left:72%;
-  font-size:18px;
-  animation-duration:13s;
-  animation-delay:1s;
-}
-
-.floating-hearts span:nth-child(5){
-  left:90%;
-  font-size:25px;
-  animation-duration:11s;
-  animation-delay:5s;
-}
-
-@keyframes floatHeart{
-  from{
-    transform:translateY(0) rotate(0deg);
-    opacity:0;
-  }
-
-  15%{
-    opacity:.65;
-  }
-
-  to{
-    transform:translateY(-115vh) rotate(25deg);
-    opacity:0;
-  }
-}
-
-/* TEXT */
+/* HEART */
 
 .heart{
-  font-size:55px;
-  margin-bottom:12px;
-  animation:heartbeat 1.4s infinite;
+  font-size:50px;
+  margin-bottom:13px;
+
+  filter:
+    drop-shadow(0 0 15px rgba(255,65,120,.65));
+
+  animation:heartbeat 1.6s infinite;
+}
+
+/* TYPOGRAPHY */
+
+h1,h2{
+  font-family:'Playfair Display',Georgia,serif;
 }
 
 h1{
-  font-family:Georgia,serif;
-  font-size:32px;
-  color:#ad315d;
-  margin-bottom:16px;
+  font-size:34px;
+  line-height:1.15;
+  margin-bottom:17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #ffc1d3,
+      #ff6d9b
+    );
+
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
 h2{
-  font-family:Georgia,serif;
-  color:#ad315d;
-  margin-bottom:12px;
+  font-size:25px;
+  color:#ffd4df;
+  margin-bottom:10px;
 }
 
 p{
+  color:var(--muted);
   line-height:1.65;
-  color:#714858;
 }
 
 .romantic{
-  font-family:Georgia,serif;
+  font-family:'Playfair Display',Georgia,serif;
   font-style:italic;
   font-size:19px;
-  margin:18px 0 28px;
+  color:#ffe4ec;
+  margin:17px 3px 29px;
 }
 
-/* BUTTONS */
+/* BUTTON */
 
 .btn{
   border:none;
+  outline:none;
   border-radius:50px;
+
   padding:15px 25px;
-  font-size:17px;
-  font-weight:bold;
+
+  font-family:inherit;
+  font-size:16px;
+  font-weight:700;
+
   cursor:pointer;
 }
 
@@ -188,86 +215,145 @@ p{
   background:
     linear-gradient(
       135deg,
-      #d82e69,
-      #b51e55
+      #ff3978,
+      #d51d5c
     );
 
   box-shadow:
-    0 9px 23px rgba(190,30,85,.32);
+    0 10px 28px rgba(255,42,108,.35),
+    inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+.primary:active{
+  transform:scale(.97);
 }
 
 .secondary{
-  background:#f5d9e3;
-  color:#943454;
+  color:#ffe3ec;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.16);
 }
+
+/* YES NO */
 
 .buttons{
   position:relative;
-  min-height:105px;
-  margin-top:25px;
+  min-height:110px;
+  margin-top:26px;
 }
 
 #yesBtn{
   position:absolute;
-  left:12%;
+  left:11%;
   top:10px;
 }
 
 #noBtn{
   position:absolute;
-  right:12%;
+  right:11%;
   top:10px;
   transition:.15s;
 }
 
 /* FOOD */
 
+.food-card{
+  padding-left:14px;
+  padding-right:14px;
+}
+
+.food-subtitle{
+  font-size:14px;
+  color:#e7bdca;
+}
+
 .food-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:22px;
+  gap:11px;
+  margin-top:21px;
 }
 
 .food{
-  background:rgba(255,255,255,.95);
-  border:2px solid transparent;
+  position:relative;
+
+  height:150px;
+
   border-radius:19px;
   overflow:hidden;
 
-  box-shadow:
-    0 6px 18px rgba(80,20,40,.13);
+  border:2px solid rgba(255,255,255,.08);
 
   cursor:pointer;
-  transition:.2s;
-  position:relative;
+
+  background:#251019;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.28);
+
+  transition:
+    transform .2s ease,
+    border .2s ease,
+    box-shadow .2s ease;
 }
 
 .food img{
   width:100%;
-  height:105px;
+  height:100%;
   object-fit:cover;
   display:block;
 }
 
+.food::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(10,2,6,.94) 0%,
+      rgba(10,2,6,.35) 48%,
+      transparent 72%
+    );
+
+  z-index:1;
+}
+
 .food span{
-  display:block;
-  padding:10px 4px;
-  font-weight:bold;
+  position:absolute;
+  left:11px;
+  right:11px;
+  bottom:10px;
+
+  z-index:2;
+
+  text-align:left;
+  color:white;
+
+  font-size:15px;
+  font-weight:700;
+
+  text-shadow:0 2px 7px rgba(0,0,0,.8);
 }
 
 .food.selected{
-  border-color:#d82e69;
-  transform:scale(.97);
-  background:#fff0f5;
+  border-color:#ff5d90;
+
+  transform:scale(.96);
+
+  box-shadow:
+    0 0 0 2px rgba(255,76,134,.16),
+    0 0 25px rgba(255,46,112,.40);
 }
 
 .food.selected::after{
   content:"✓";
 
   position:absolute;
-  right:8px;
-  top:8px;
+  top:9px;
+  right:9px;
+  z-index:3;
 
   width:28px;
   height:28px;
@@ -275,47 +361,56 @@ p{
 
   border-radius:50%;
 
-  background:#d82e69;
+  background:#ff3c79;
   color:white;
 
   font-weight:bold;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.35);
 }
 
+/* SURPRISE */
+
 .surprise{
-  margin-top:15px;
+  margin-top:13px;
   padding:15px;
 
-  border-radius:18px;
+  border-radius:17px;
 
-  background:rgba(255,240,246,.95);
+  background:rgba(255,77,135,.10);
+  border:1px dashed rgba(255,145,177,.55);
 
-  border:2px dashed #d77899;
+  color:#ffe4ec;
+  font-weight:700;
 
-  font-weight:bold;
   cursor:pointer;
 }
 
 .surprise.selected{
-  background:#f8cddd;
-  border-color:#c83f6b;
+  background:rgba(255,65,123,.25);
+  border-color:#ff5b8e;
 }
 
 .next{
   width:100%;
-  margin-top:22px;
+  margin-top:19px;
 }
 
 /* DATE */
 
 .inputBox{
   text-align:left;
-  margin-top:22px;
+  margin-top:20px;
 }
 
 .inputBox label{
   display:block;
-  font-weight:bold;
   margin-bottom:8px;
+
+  color:#ffe1e9;
+  font-size:14px;
+  font-weight:700;
 }
 
 input{
@@ -323,12 +418,17 @@ input{
 
   padding:15px;
 
-  border:1px solid #e6b5c5;
   border-radius:15px;
+  border:1px solid rgba(255,255,255,.17);
 
-  font-size:17px;
+  outline:none;
 
-  background:rgba(255,255,255,.9);
+  background:rgba(255,255,255,.10);
+  color:white;
+
+  font-size:16px;
+
+  color-scheme:dark;
 }
 
 /* FINAL */
@@ -336,118 +436,210 @@ input{
 .summary{
   margin:22px 0;
 
-  background:rgba(255,238,245,.9);
+  padding:17px;
 
   border-radius:19px;
 
-  padding:18px;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.11);
 
   text-align:left;
-  line-height:2;
+
+  line-height:2.1;
+  color:#f8dce5;
+}
+
+.summary b{
+  color:white;
 }
 
 .big-message{
-  font-family:Georgia,serif;
+  font-family:'Playfair Display',Georgia,serif;
 
   font-size:22px;
-  font-weight:bold;
+  line-height:1.5;
 
-  color:#a52d55;
+  color:#ffd3df;
 
-  line-height:1.55;
-
-  margin-top:20px;
+  margin:21px 0;
 }
 
-.ps{
-  margin-top:25px;
-
-  font-family:Georgia,serif;
-  font-style:italic;
-
-  font-size:14px;
+#readyTime{
+  color:#ff6e9b;
 }
 
 /* WHATSAPP */
 
 .whatsapp-btn{
-  display:block;
-
   width:100%;
 
-  margin-top:25px;
+  padding:16px;
 
-  border:none;
+  border:0;
   border-radius:50px;
 
-  padding:16px 18px;
-
-  font-size:18px;
-  font-weight:bold;
+  font-family:inherit;
+  font-size:17px;
+  font-weight:800;
 
   color:white;
 
-  background:#25D366;
+  background:
+    linear-gradient(
+      135deg,
+      #25D366,
+      #128C7E
+    );
 
   box-shadow:
-    0 9px 22px rgba(37,211,102,.28);
+    0 10px 25px rgba(37,211,102,.24);
 
   cursor:pointer;
 }
 
 .send-note{
+  font-size:11px;
   margin-top:9px;
-  font-size:12px;
-  color:#89616e;
+  color:#c99cab;
 }
+
+.ps{
+  margin-top:25px;
+
+  font-family:'Playfair Display',Georgia,serif;
+  font-style:italic;
+
+  font-size:13px;
+
+  color:#d9aebb;
+}
+
+/* FLOATING HEARTS */
+
+.floating{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:-1;
+}
+
+.floating span{
+  position:absolute;
+  bottom:-60px;
+
+  opacity:0;
+
+  filter:
+    drop-shadow(0 0 7px rgba(255,80,130,.5));
+
+  animation:floatUp linear infinite;
+}
+
+.floating span:nth-child(1){
+  left:8%;
+  font-size:17px;
+  animation-duration:10s;
+}
+
+.floating span:nth-child(2){
+  left:27%;
+  font-size:13px;
+  animation-duration:13s;
+  animation-delay:3s;
+}
+
+.floating span:nth-child(3){
+  left:51%;
+  font-size:20px;
+  animation-duration:12s;
+  animation-delay:6s;
+}
+
+.floating span:nth-child(4){
+  left:72%;
+  font-size:15px;
+  animation-duration:9s;
+  animation-delay:2s;
+}
+
+.floating span:nth-child(5){
+  left:91%;
+  font-size:18px;
+  animation-duration:14s;
+  animation-delay:5s;
+}
+
+/* ANIMATION */
 
 @keyframes heartbeat{
   0%,100%{
     transform:scale(1);
   }
-
   50%{
-    transform:scale(1.15);
+    transform:scale(1.12);
   }
 }
 
-@keyframes fade{
+@keyframes screenIn{
   from{
     opacity:0;
-    transform:translateY(12px);
+    transform:scale(.97) translateY(12px);
   }
 
   to{
     opacity:1;
-    transform:translateY(0);
+    transform:scale(1) translateY(0);
+  }
+}
+
+@keyframes floatUp{
+  0%{
+    transform:translateY(0) rotate(0);
+    opacity:0;
+  }
+
+  15%{
+    opacity:.55;
+  }
+
+  85%{
+    opacity:.35;
+  }
+
+  100%{
+    transform:translateY(-115vh) rotate(30deg);
+    opacity:0;
   }
 }
 
 @media(max-width:360px){
 
   h1{
-    font-size:27px;
+    font-size:30px;
   }
 
-  .food img{
-    height:90px;
+  .food{
+    height:135px;
   }
 
   .card{
-    padding:27px 17px;
+    padding-left:17px;
+    padding-right:17px;
   }
+
 }
 </style>
 </head>
 
 <body>
 
-<div class="floating-hearts">
-<span>❤️</span>
-<span>💕</span>
-<span>🌹</span>
-<span>❤️</span>
-<span>💗</span>
+<div class="floating">
+  <span>❤️</span>
+  <span>🌹</span>
+  <span>💕</span>
+  <span>❤️</span>
+  <span>💗</span>
 </div>
 
 
@@ -459,17 +651,17 @@ input{
 
 <div class="heart">❤️</div>
 
-<h1>Hey Rupsha...</h1>
+<h1>For Rupsha</h1>
 
 <p class="romantic">
-Some moments become beautiful simply because they're shared with someone special. 🌹
+Some invitations deserve more than just a text... 🌹
 </p>
 
 <button
 class="btn primary"
 onclick="show('question')">
 
-I have a question for you... 💌
+Open my invitation 💌
 
 </button>
 
@@ -484,13 +676,17 @@ I have a question for you... 💌
 
 <div class="card">
 
-<div class="heart">🌷</div>
+<div class="heart">🌹</div>
 
-<h1>Rupsha...</h1>
+<h1>Hey Rupsha...</h1>
 
-<p style="font-size:20px;">
-Would you go on a date with me? ❤️
+<p style="font-size:20px;color:#ffe6ed;">
+There's something I've been meaning to ask you...
 </p>
+
+<h2 style="margin-top:22px;font-size:27px;">
+Would you go on a date with me? ❤️
+</h2>
 
 
 <div class="buttons">
@@ -515,8 +711,7 @@ NO 🙈
 
 </div>
 
-
-<p style="font-size:13px;margin-top:10px;">
+<p style="font-size:12px;color:#cda4b1;">
 Choose carefully 👀
 </p>
 
@@ -529,138 +724,111 @@ Choose carefully 👀
 
 <section class="screen" id="food">
 
-<div class="card">
+<div class="card food-card">
 
-<h2>Okay Rupsha 😌❤️</h2>
-
-<p>
-Now the really important question...
-</p>
-
-<h2 style="margin-top:12px;">
+<h1 style="font-size:29px;">
 What are you craving? 🍽️
-</h2>
+</h1>
+
+<p class="food-subtitle">
+Pick your favorite. Dinner is on me 🌹
+</p>
 
 
 <div class="food-grid">
 
 
-<div
-class="food"
+<div class="food"
 data-name="Pizza"
 onclick="selectFood(this)">
 
 <img
-src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80"
-alt="Pizza">
+src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=90">
 
 <span>🍕 Pizza</span>
-
 </div>
 
 
-<div
-class="food"
+<div class="food"
 data-name="Burger"
 onclick="selectFood(this)">
 
 <img
-src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
-alt="Burger">
+src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=90">
 
 <span>🍔 Burger</span>
-
 </div>
 
 
-<div
-class="food"
+<div class="food"
 data-name="Pasta"
 onclick="selectFood(this)">
 
 <img
-src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=500&q=80"
-alt="Pasta">
+src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=600&q=90">
 
 <span>🍝 Pasta</span>
-
 </div>
 
 
-<div
-class="food"
+<div class="food"
 data-name="Fried Chicken"
 onclick="selectFood(this)">
 
 <img
-src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=500&q=80"
-alt="Fried Chicken">
+src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=600&q=90">
 
 <span>🍗 Fried Chicken</span>
-
 </div>
 
 
-<div
-class="food"
+<div class="food"
 data-name="Chinese"
 onclick="selectFood(this)">
 
 <img
-src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=500&q=80"
-alt="Chinese">
+src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=600&q=90">
 
 <span>🥡 Chinese</span>
-
 </div>
 
 
-<div
-class="food"
+<div class="food"
 data-name="Fuchka"
 onclick="selectFood(this)">
 
 <img
-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fuchka%20by%20Mahbub%20Hasan.JPG"
-alt="Fuchka">
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fuchka%20by%20Mahbub%20Hasan.JPG">
 
 <span>🥙 Fuchka</span>
-
 </div>
 
 
-<div
-class="food"
+<div class="food"
 data-name="Chotpoti"
 onclick="selectFood(this)">
 
 <img
-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chotpoti%20%28cropped%29.jpg"
-alt="Chotpoti">
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chotpoti%20%28cropped%29.jpg">
 
 <span>🥣 Chotpoti</span>
-
 </div>
 
 
-<div
-class="food"
+<div class="food"
 data-name="Dessert"
 onclick="selectFood(this)">
 
 <img
-src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80"
-alt="Dessert">
+src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=90">
 
 <span>🍰 Dessert</span>
-
 </div>
 
 </div>
 
 
-<div
-class="surprise"
+<div class="surprise"
 onclick="surpriseMe(this)">
 
 🎁 Surprise me ❤️
@@ -681,7 +849,7 @@ Continue ❤️
 </section>
 
 
-<!-- DATE AND TIME -->
+<!-- DATE -->
 
 <section class="screen" id="datetime">
 
@@ -692,32 +860,24 @@ Continue ❤️
 <h1>When are you free?</h1>
 
 <p>
-Pick a day that works for you. I'll take care of the rest. ❤️
+Pick a day that works for you. I'll take care of the rest ❤️
 </p>
 
 
 <div class="inputBox">
 
-<label>
-📅 Choose our date
-</label>
+<label>📅 Choose our date</label>
 
-<input
-type="date"
-id="date">
+<input type="date" id="date">
 
 </div>
 
 
 <div class="inputBox">
 
-<label>
-🕐 What time works for you?
-</label>
+<label>🕐 What time works for you?</label>
 
-<input
-type="time"
-id="time">
+<input type="time" id="time">
 
 </div>
 
@@ -743,12 +903,10 @@ It's a date ❤️
 
 <div class="heart">❤️</div>
 
-<h1>
-It's a date, Rupsha!
-</h1>
+<h1>It's a date, Rupsha!</h1>
 
 <p>
-Well... this just made my day. 🌹
+Well... you just made my day 🌹
 </p>
 
 
@@ -775,7 +933,7 @@ Well... this just made my day. 🌹
 <div class="big-message">
 
 Be ready by
-<span id="readyTime"></span>,<br>
+<span id="readyTime"></span><br>
 
 I'm coming to get you 🚗❤️
 
@@ -792,15 +950,15 @@ Send it to me 💌
 
 
 <p class="send-note">
-Send your choices to me on WhatsApp 💚
+Send me your choices on WhatsApp 💚
 </p>
 
 
 <p class="ps">
 
-P.S. Normal people would've just texted you.<br>
+P.S. Normal people would've just texted you.<br><br>
 
-But you're not someone I wanted to ask in a normal way. 🌹
+But you're not someone I wanted to ask in a normal way 🌹
 
 </p>
 
@@ -811,60 +969,44 @@ But you're not someone I wanted to ask in a normal way. 🌹
 
 <script>
 
-let chosenFood = "";
-let chosenDateText = "";
-let chosenTimeText = "";
+let chosenFood="";
+let chosenDateText="";
+let chosenTimeText="";
 
-
-/* SCREEN */
 
 function show(id){
 
-  document
-  .querySelectorAll(".screen")
-  .forEach(
-    x => x.classList.remove("active")
-  );
+  document.querySelectorAll(".screen")
+  .forEach(x=>x.classList.remove("active"));
 
-  document
-  .getElementById(id)
+  document.getElementById(id)
   .classList.add("active");
 
   window.scrollTo(0,0);
-
 }
 
 
-/* RUNAWAY NO BUTTON */
+/* NO BUTTON */
 
-const noBtn =
-document.getElementById("noBtn");
-
+const noBtn=document.getElementById("noBtn");
 
 function moveNo(){
 
-  const box =
-  document.querySelector(".buttons");
+  const box=document.querySelector(".buttons");
 
-  const maxX =
-  Math.max(
+  const maxX=Math.max(
     0,
-    box.clientWidth - noBtn.offsetWidth
+    box.clientWidth-noBtn.offsetWidth
   );
 
-  const maxY = 60;
-
-  noBtn.style.left =
+  noBtn.style.left=
   Math.random()*maxX+"px";
 
-  noBtn.style.right =
-  "auto";
+  noBtn.style.right="auto";
 
-  noBtn.style.top =
-  Math.random()*maxY+"px";
-
+  noBtn.style.top=
+  Math.random()*65+"px";
 }
-
 
 noBtn.addEventListener(
 "touchstart",
@@ -874,7 +1016,6 @@ function(e){
   moveNo();
 
 });
-
 
 noBtn.addEventListener(
 "mouseover",
@@ -886,37 +1027,30 @@ moveNo
 
 function selectFood(el){
 
-  document
-  .querySelectorAll(".food")
+  document.querySelectorAll(".food")
   .forEach(
-    x => x.classList.remove("selected")
+    x=>x.classList.remove("selected")
   );
 
-  document
-  .querySelector(".surprise")
+  document.querySelector(".surprise")
   .classList.remove("selected");
 
   el.classList.add("selected");
 
-  chosenFood =
-  el.dataset.name;
-
+  chosenFood=el.dataset.name;
 }
 
 
 function surpriseMe(el){
 
-  document
-  .querySelectorAll(".food")
+  document.querySelectorAll(".food")
   .forEach(
-    x => x.classList.remove("selected")
+    x=>x.classList.remove("selected")
   );
 
   el.classList.add("selected");
 
-  chosenFood =
-  "Surprise me ❤️";
-
+  chosenFood="Surprise me ❤️";
 }
 
 
@@ -929,52 +1063,38 @@ function foodNext(){
     );
 
     return;
-
   }
 
   show("datetime");
-
 }
 
 
 /* DATE */
 
-const dateInput =
+const dateInput=
 document.getElementById("date");
 
-const today =
-new Date();
+const today=new Date();
 
-const localToday =
+const localToday=
+today.getFullYear()+"-"+
+String(today.getMonth()+1)
+.padStart(2,"0")+"-"+
+String(today.getDate())
+.padStart(2,"0");
 
-today.getFullYear()
-+ "-"
-+ String(
-  today.getMonth()+1
-).padStart(2,"0")
-+ "-"
-+ String(
-  today.getDate()
-).padStart(2,"0");
-
-dateInput.min =
-localToday;
+dateInput.min=localToday;
 
 
 /* FINISH */
 
 function finish(){
 
-  const date =
-  document
-  .getElementById("date")
-  .value;
+  const date=
+  document.getElementById("date").value;
 
-
-  const time =
-  document
-  .getElementById("time")
-  .value;
+  const time=
+  document.getElementById("time").value;
 
 
   if(!date || !time){
@@ -984,17 +1104,14 @@ function finish(){
     );
 
     return;
-
   }
 
 
-  const dateObj =
-  new Date(
-    date+"T00:00:00"
-  );
+  const dateObj=
+  new Date(date+"T00:00:00");
 
 
-  const niceDate =
+  chosenDateText=
   dateObj.toLocaleDateString(
     "en-US",
     {
@@ -1006,13 +1123,9 @@ function finish(){
   );
 
 
-  const parts =
-  time.split(":");
+  const parts=time.split(":");
 
-
-  const t =
-  new Date();
-
+  const t=new Date();
 
   t.setHours(
     Number(parts[0]),
@@ -1022,7 +1135,7 @@ function finish(){
   );
 
 
-  const niceTime =
+  chosenTimeText=
   t.toLocaleTimeString(
     "en-US",
     {
@@ -1032,39 +1145,27 @@ function finish(){
   );
 
 
-  chosenDateText =
-  niceDate;
-
-  chosenTimeText =
-  niceTime;
+  document.getElementById(
+    "finalFood"
+  ).textContent=chosenFood;
 
 
-  document
-  .getElementById("finalFood")
-  .textContent =
-  chosenFood;
+  document.getElementById(
+    "finalDate"
+  ).textContent=chosenDateText;
 
 
-  document
-  .getElementById("finalDate")
-  .textContent =
-  niceDate;
+  document.getElementById(
+    "finalTime"
+  ).textContent=chosenTimeText;
 
 
-  document
-  .getElementById("finalTime")
-  .textContent =
-  niceTime;
-
-
-  document
-  .getElementById("readyTime")
-  .textContent =
-  niceTime;
+  document.getElementById(
+    "readyTime"
+  ).textContent=chosenTimeText;
 
 
   show("final");
-
 }
 
 
@@ -1072,11 +1173,9 @@ function finish(){
 
 function sendToWhatsApp(){
 
-  const phone =
-  "8801721601772";
+  const phone="8801721601772";
 
-
-  const message =
+  const message=
 `Okay, it's a date! ❤️
 
 Here's my choice:
@@ -1088,18 +1187,11 @@ Here's my choice:
 See you then 🌹❤️`;
 
 
-  const whatsappURL =
-  "https://wa.me/"
-  + phone
-  + "?text="
-  + encodeURIComponent(message);
+  const url=
+  "https://wa.me/"+phone+
+  "?text="+encodeURIComponent(message);
 
-
-  window.open(
-    whatsappURL,
-    "_blank"
-  );
-
+  window.location.href=url;
 }
 
 </script>
