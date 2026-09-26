@@ -234,9 +234,37 @@ input {
   font-size: 14px;
 }
 
+/* SEND BUTTON */
+
+.send-btn {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 50px;
+  background: #c83f6b;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(200,63,107,.25);
+}
+
+.send-note {
+  font-size: 12px;
+  margin-top: 9px;
+  color: #98717e;
+}
+
 @keyframes heartbeat {
-  0%,100% { transform:scale(1); }
-  50% { transform:scale(1.15); }
+  0%,100% {
+    transform:scale(1);
+  }
+
+  50% {
+    transform:scale(1.15);
+  }
 }
 
 @keyframes fade {
@@ -244,6 +272,7 @@ input {
     opacity:0;
     transform:translateY(10px);
   }
+
   to {
     opacity:1;
     transform:translateY(0);
@@ -263,6 +292,7 @@ input {
 </head>
 
 <body>
+
 
 <!-- INTRO -->
 
@@ -335,73 +365,101 @@ What are you craving?
 
 <div class="food-grid">
 
+
 <div class="food" data-name="Pizza" onclick="selectFood(this)">
+
 <img
 src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80"
 alt="Pizza">
+
 <span>🍕 Pizza</span>
+
 </div>
 
+
 <div class="food" data-name="Burger" onclick="selectFood(this)">
+
 <img
 src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
 alt="Burger">
+
 <span>🍔 Burger</span>
+
 </div>
 
+
 <div class="food" data-name="Pasta" onclick="selectFood(this)">
+
 <img
 src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=500&q=80"
 alt="Pasta">
+
 <span>🍝 Pasta</span>
+
 </div>
 
+
 <div class="food" data-name="Fried Chicken" onclick="selectFood(this)">
+
 <img
 src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=500&q=80"
 alt="Fried Chicken">
+
 <span>🍗 Fried Chicken</span>
+
 </div>
 
+
 <div class="food" data-name="Chinese" onclick="selectFood(this)">
+
 <img
 src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=500&q=80"
 alt="Chinese">
+
 <span>🥡 Chinese</span>
+
 </div>
 
-<!-- CORRECT FUCHKA -->
 
 <div class="food" data-name="Fuchka" onclick="selectFood(this)">
+
 <img
 src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fuchka%20by%20Mahbub%20Hasan.JPG"
-alt="Bangladeshi Fuchka">
+alt="Fuchka">
+
 <span>🥙 Fuchka</span>
+
 </div>
 
-<!-- CORRECT CHOTPOTI -->
 
 <div class="food" data-name="Chotpoti" onclick="selectFood(this)">
+
 <img
 src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chotpoti%20%28cropped%29.jpg"
-alt="Bangladeshi Chotpoti">
+alt="Chotpoti">
+
 <span>🥣 Chotpoti</span>
+
 </div>
 
-<!-- DESSERT -->
 
 <div class="food" data-name="Dessert" onclick="selectFood(this)">
+
 <img
 src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80"
 alt="Dessert">
+
 <span>🍰 Dessert</span>
+
 </div>
 
 </div>
+
 
 <div class="surprise" onclick="surpriseMe(this)">
 🎁 Surprise me
 </div>
+
 
 <button class="btn primary next" onclick="foodNext()">
 Continue
@@ -411,9 +469,10 @@ Continue
 </section>
 
 
-<!-- DATE & TIME -->
+<!-- DATE AND TIME -->
 
 <section class="screen" id="datetime">
+
 <div class="card">
 
 <div class="heart">💌</div>
@@ -424,6 +483,7 @@ Continue
 Pick a day that works for you. I'll take care of the rest.
 </p>
 
+
 <div class="inputBox">
 
 <label>📅 Choose our date</label>
@@ -431,6 +491,7 @@ Pick a day that works for you. I'll take care of the rest.
 <input type="date" id="date">
 
 </div>
+
 
 <div class="inputBox">
 
@@ -440,17 +501,20 @@ Pick a day that works for you. I'll take care of the rest.
 
 </div>
 
+
 <button class="btn primary next" onclick="finish()">
 It's a date
 </button>
 
 </div>
+
 </section>
 
 
 <!-- FINAL -->
 
 <section class="screen" id="final">
+
 <div class="card">
 
 <div class="heart">❤️</div>
@@ -460,6 +524,7 @@ It's a date
 <p>
 Well... this just made my day.
 </p>
+
 
 <div class="summary">
 
@@ -480,63 +545,107 @@ Well... this just made my day.
 
 </div>
 
+
 <div class="big-message">
-Be ready by <span id="readyTime"></span>,<br>
+
+Be ready by
+<span id="readyTime"></span>,<br>
+
 I'm coming to get you.
+
 </div>
 
+
+<button class="send-btn" onclick="sendToWhatsApp()">
+Send it to me
+</button>
+
+<p class="send-note">
+Tap here to send me your choices
+</p>
+
+
 <p class="ps">
+
 P.S. Normal people would've just texted you.<br>
+
 But you're not someone I wanted to ask in a normal way.
+
 </p>
 
 </div>
+
 </section>
 
 
 <script>
 
 let chosenFood = "";
+let chosenDateText = "";
+let chosenTimeText = "";
+
+
+/* CHANGE SCREEN */
 
 function show(id) {
 
   document.querySelectorAll(".screen")
   .forEach(x => x.classList.remove("active"));
 
-  document.getElementById(id).classList.add("active");
+  document.getElementById(id)
+  .classList.add("active");
 
   window.scrollTo(0,0);
+
 }
 
 
 /* NO BUTTON RUNS AWAY */
 
-const noBtn = document.getElementById("noBtn");
+const noBtn =
+document.getElementById("noBtn");
+
 
 function moveNo() {
 
-  const box = document.querySelector(".buttons");
+  const box =
+  document.querySelector(".buttons");
 
   const maxX =
-  Math.max(0, box.clientWidth - noBtn.offsetWidth);
+  Math.max(
+    0,
+    box.clientWidth - noBtn.offsetWidth
+  );
 
   const maxY = 60;
 
   noBtn.style.left =
   Math.random() * maxX + "px";
 
-  noBtn.style.right = "auto";
+  noBtn.style.right =
+  "auto";
 
   noBtn.style.top =
   Math.random() * maxY + "px";
+
 }
 
-noBtn.addEventListener("touchstart", function(e) {
+
+noBtn.addEventListener(
+"touchstart",
+function(e) {
+
   e.preventDefault();
+
   moveNo();
+
 });
 
-noBtn.addEventListener("mouseover", moveNo);
+
+noBtn.addEventListener(
+"mouseover",
+moveNo
+);
 
 
 /* FOOD */
@@ -544,55 +653,78 @@ noBtn.addEventListener("mouseover", moveNo);
 function selectFood(el) {
 
   document.querySelectorAll(".food")
-  .forEach(x => x.classList.remove("selected"));
+  .forEach(
+    x => x.classList.remove("selected")
+  );
 
   document.querySelector(".surprise")
   .classList.remove("selected");
 
   el.classList.add("selected");
 
-  chosenFood = el.dataset.name;
+  chosenFood =
+  el.dataset.name;
+
 }
 
 
 function surpriseMe(el) {
 
   document.querySelectorAll(".food")
-  .forEach(x => x.classList.remove("selected"));
+  .forEach(
+    x => x.classList.remove("selected")
+  );
 
   el.classList.add("selected");
 
-  chosenFood = "Surprise me";
+  chosenFood =
+  "Surprise me";
+
 }
 
 
 function foodNext() {
 
   if(!chosenFood) {
-    alert("You have to pick something first.");
+
+    alert(
+      "You have to pick something first."
+    );
+
     return;
+
   }
 
   show("datetime");
+
 }
 
 
-/* DON'T ALLOW PAST DATE */
+/* PREVENT PAST DATE */
 
 const dateInput =
 document.getElementById("date");
 
-const today = new Date();
+const today =
+new Date();
 
 const localToday =
-today.getFullYear() + "-" +
-String(today.getMonth()+1).padStart(2,"0") + "-" +
-String(today.getDate()).padStart(2,"0");
 
-dateInput.min = localToday;
+today.getFullYear()
++ "-"
++ String(
+    today.getMonth()+1
+  ).padStart(2,"0")
++ "-"
++ String(
+    today.getDate()
+  ).padStart(2,"0");
+
+dateInput.min =
+localToday;
 
 
-/* FINAL */
+/* FINISH */
 
 function finish() {
 
@@ -602,27 +734,48 @@ function finish() {
   const time =
   document.getElementById("time").value;
 
+
   if(!date || !time) {
 
-    alert("Don't leave me guessing. Pick a date and time.");
+    alert(
+      "Don't leave me guessing. Pick a date and time."
+    );
+
     return;
+
   }
 
+
   const dateObj =
-  new Date(date + "T00:00:00");
+  new Date(
+    date + "T00:00:00"
+  );
+
 
   const niceDate =
-  dateObj.toLocaleDateString("en-US", {
-    weekday:"long",
-    month:"long",
-    day:"numeric",
-    year:"numeric"
-  });
+  dateObj.toLocaleDateString(
+    "en-US",
+    {
 
-  const [hour, minute] =
+      weekday:"long",
+
+      month:"long",
+
+      day:"numeric",
+
+      year:"numeric"
+
+    }
+  );
+
+
+  const [hour,minute] =
   time.split(":");
 
-  const t = new Date();
+
+  const t =
+  new Date();
+
 
   t.setHours(
     Number(hour),
@@ -631,25 +784,86 @@ function finish() {
     0
   );
 
+
   const niceTime =
-  t.toLocaleTimeString("en-US", {
-    hour:"numeric",
-    minute:"2-digit"
-  });
+  t.toLocaleTimeString(
+    "en-US",
+    {
 
-  document.getElementById("finalFood")
-  .textContent = chosenFood;
+      hour:"numeric",
 
-  document.getElementById("finalDate")
-  .textContent = niceDate;
+      minute:"2-digit"
 
-  document.getElementById("finalTime")
-  .textContent = niceTime;
+    }
+  );
 
-  document.getElementById("readyTime")
-  .textContent = niceTime;
+
+  chosenDateText =
+  niceDate;
+
+  chosenTimeText =
+  niceTime;
+
+
+  document
+  .getElementById("finalFood")
+  .textContent =
+  chosenFood;
+
+
+  document
+  .getElementById("finalDate")
+  .textContent =
+  niceDate;
+
+
+  document
+  .getElementById("finalTime")
+  .textContent =
+  niceTime;
+
+
+  document
+  .getElementById("readyTime")
+  .textContent =
+  niceTime;
+
 
   show("final");
+
+}
+
+
+/* SEND TO WHATSAPP */
+
+function sendToWhatsApp() {
+
+  const phone =
+  "8801721601772";
+
+
+  const message =
+`Okay, it's a date!
+
+Here's my choice:
+
+Food: ${chosenFood}
+Date: ${chosenDateText}
+Time: ${chosenTimeText}
+
+See you then.`;
+
+
+  const url =
+  "https://wa.me/"
+  + phone
+  + "?text="
+  + encodeURIComponent(message);
+
+
+  window.location.href =
+  url;
+
 }
 
 </script>
