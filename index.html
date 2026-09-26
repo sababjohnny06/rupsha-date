@@ -3,289 +3,438 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Rupsha</title>
+<title>For Rupsha ❤️</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(145deg, #fff0f5, #ffe4ec);
-  min-height: 100vh;
-  color: #49202d;
+html{
+  scroll-behavior:smooth;
 }
 
-.screen {
-  display: none;
-  min-height: 100vh;
-  padding: 25px 18px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+body{
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+  color:#542233;
+
+  background:
+    linear-gradient(
+      rgba(65,10,30,.38),
+      rgba(160,40,80,.30)
+    ),
+    url("IMG_20260718_161007.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
 }
 
-.screen.active {
-  display: flex;
-  animation: fade .5s ease;
+/* SCREENS */
+
+.screen{
+  display:none;
+  min-height:100vh;
+  padding:25px 18px;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
-.card {
-  width: 100%;
-  max-width: 430px;
-  background: rgba(255,255,255,.95);
-  border-radius: 28px;
-  padding: 30px 20px;
-  box-shadow: 0 15px 45px rgba(130,40,70,.15);
+.screen.active{
+  display:flex;
+  animation:fade .6s ease;
 }
 
-.heart {
-  font-size: 52px;
-  margin-bottom: 12px;
-  animation: heartbeat 1.4s infinite;
+/* ROMANTIC GLASS CARD */
+
+.card{
+  width:100%;
+  max-width:430px;
+
+  background:rgba(255,245,249,.90);
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,.65);
+
+  border-radius:30px;
+
+  padding:30px 20px;
+
+  box-shadow:
+    0 20px 50px rgba(80,10,35,.28),
+    inset 0 1px 0 rgba(255,255,255,.8);
 }
 
-h1 {
-  font-family: Georgia, serif;
-  font-size: 31px;
-  color: #a52d55;
-  margin-bottom: 16px;
+/* FLOATING HEARTS */
+
+.floating-hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:-1;
 }
 
-h2 {
-  font-family: Georgia, serif;
-  color: #a52d55;
-  margin-bottom: 12px;
+.floating-hearts span{
+  position:absolute;
+  bottom:-60px;
+  opacity:.65;
+  animation:floatHeart linear infinite;
 }
 
-p {
-  line-height: 1.6;
-  color: #72505c;
+.floating-hearts span:nth-child(1){
+  left:8%;
+  font-size:22px;
+  animation-duration:9s;
 }
 
-.romantic {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: 19px;
-  margin: 18px 0 28px;
+.floating-hearts span:nth-child(2){
+  left:24%;
+  font-size:16px;
+  animation-duration:12s;
+  animation-delay:2s;
 }
 
-.btn {
-  border: none;
-  border-radius: 50px;
-  padding: 15px 26px;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
+.floating-hearts span:nth-child(3){
+  left:48%;
+  font-size:24px;
+  animation-duration:10s;
+  animation-delay:4s;
 }
 
-.primary {
-  background: #c83f6b;
-  color: white;
-  box-shadow: 0 8px 20px rgba(200,63,107,.25);
+.floating-hearts span:nth-child(4){
+  left:72%;
+  font-size:18px;
+  animation-duration:13s;
+  animation-delay:1s;
 }
 
-.secondary {
-  background: #f4d8e1;
-  color: #8f3654;
+.floating-hearts span:nth-child(5){
+  left:90%;
+  font-size:25px;
+  animation-duration:11s;
+  animation-delay:5s;
 }
 
-.buttons {
-  position: relative;
-  min-height: 100px;
-  margin-top: 25px;
+@keyframes floatHeart{
+  from{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+
+  15%{
+    opacity:.65;
+  }
+
+  to{
+    transform:translateY(-115vh) rotate(25deg);
+    opacity:0;
+  }
 }
 
-#yesBtn {
-  position: absolute;
-  left: 12%;
-  top: 10px;
+/* TEXT */
+
+.heart{
+  font-size:55px;
+  margin-bottom:12px;
+  animation:heartbeat 1.4s infinite;
 }
 
-#noBtn {
-  position: absolute;
-  right: 12%;
-  top: 10px;
-  transition: .15s;
+h1{
+  font-family:Georgia,serif;
+  font-size:32px;
+  color:#ad315d;
+  margin-bottom:16px;
+}
+
+h2{
+  font-family:Georgia,serif;
+  color:#ad315d;
+  margin-bottom:12px;
+}
+
+p{
+  line-height:1.65;
+  color:#714858;
+}
+
+.romantic{
+  font-family:Georgia,serif;
+  font-style:italic;
+  font-size:19px;
+  margin:18px 0 28px;
+}
+
+/* BUTTONS */
+
+.btn{
+  border:none;
+  border-radius:50px;
+  padding:15px 25px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.primary{
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d82e69,
+      #b51e55
+    );
+
+  box-shadow:
+    0 9px 23px rgba(190,30,85,.32);
+}
+
+.secondary{
+  background:#f5d9e3;
+  color:#943454;
+}
+
+.buttons{
+  position:relative;
+  min-height:105px;
+  margin-top:25px;
+}
+
+#yesBtn{
+  position:absolute;
+  left:12%;
+  top:10px;
+}
+
+#noBtn{
+  position:absolute;
+  right:12%;
+  top:10px;
+  transition:.15s;
 }
 
 /* FOOD */
 
-.food-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 12px;
-  margin-top: 22px;
+.food-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:22px;
 }
 
-.food {
-  background: white;
-  border: 2px solid transparent;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 5px 18px rgba(0,0,0,.08);
-  cursor: pointer;
-  transition: .2s;
-  position: relative;
+.food{
+  background:rgba(255,255,255,.95);
+  border:2px solid transparent;
+  border-radius:19px;
+  overflow:hidden;
+
+  box-shadow:
+    0 6px 18px rgba(80,20,40,.13);
+
+  cursor:pointer;
+  transition:.2s;
+  position:relative;
 }
 
-.food img {
-  width: 100%;
-  height: 105px;
-  object-fit: cover;
-  display: block;
+.food img{
+  width:100%;
+  height:105px;
+  object-fit:cover;
+  display:block;
 }
 
-.food span {
-  display: block;
-  padding: 10px 4px;
-  font-weight: bold;
+.food span{
+  display:block;
+  padding:10px 4px;
+  font-weight:bold;
 }
 
-.food.selected {
-  border-color: #c83f6b;
-  transform: scale(.97);
-  background: #fff0f5;
+.food.selected{
+  border-color:#d82e69;
+  transform:scale(.97);
+  background:#fff0f5;
 }
 
-.food.selected::after {
-  content: "✓";
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  background: #c83f6b;
-  color: white;
-  width: 27px;
-  height: 27px;
-  line-height: 27px;
-  border-radius: 50%;
-  font-weight: bold;
+.food.selected::after{
+  content:"✓";
+
+  position:absolute;
+  right:8px;
+  top:8px;
+
+  width:28px;
+  height:28px;
+  line-height:28px;
+
+  border-radius:50%;
+
+  background:#d82e69;
+  color:white;
+
+  font-weight:bold;
 }
 
-.surprise {
-  margin-top: 14px;
-  padding: 15px;
-  border-radius: 16px;
-  background: #fff0f5;
-  border: 2px dashed #d77b99;
-  font-weight: bold;
-  cursor: pointer;
+.surprise{
+  margin-top:15px;
+  padding:15px;
+
+  border-radius:18px;
+
+  background:rgba(255,240,246,.95);
+
+  border:2px dashed #d77899;
+
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.surprise.selected {
-  background: #f8cddd;
-  border-color: #c83f6b;
+.surprise.selected{
+  background:#f8cddd;
+  border-color:#c83f6b;
 }
 
-.next {
-  width: 100%;
-  margin-top: 22px;
+.next{
+  width:100%;
+  margin-top:22px;
 }
 
 /* DATE */
 
-.inputBox {
-  text-align: left;
-  margin-top: 22px;
+.inputBox{
+  text-align:left;
+  margin-top:22px;
 }
 
-.inputBox label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 8px;
+.inputBox label{
+  display:block;
+  font-weight:bold;
+  margin-bottom:8px;
 }
 
-input {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #e7bdca;
-  border-radius: 14px;
-  font-size: 17px;
-  background: #fffafb;
+input{
+  width:100%;
+
+  padding:15px;
+
+  border:1px solid #e6b5c5;
+  border-radius:15px;
+
+  font-size:17px;
+
+  background:rgba(255,255,255,.9);
 }
 
 /* FINAL */
 
-.summary {
-  margin: 22px 0;
-  background: #fff4f7;
-  border-radius: 18px;
-  padding: 18px;
-  text-align: left;
-  line-height: 2;
+.summary{
+  margin:22px 0;
+
+  background:rgba(255,238,245,.9);
+
+  border-radius:19px;
+
+  padding:18px;
+
+  text-align:left;
+  line-height:2;
 }
 
-.big-message {
-  font-family: Georgia, serif;
-  font-size: 22px;
-  font-weight: bold;
-  color: #a52d55;
-  line-height: 1.5;
-  margin-top: 20px;
+.big-message{
+  font-family:Georgia,serif;
+
+  font-size:22px;
+  font-weight:bold;
+
+  color:#a52d55;
+
+  line-height:1.55;
+
+  margin-top:20px;
 }
 
-.ps {
-  margin-top: 27px;
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: 14px;
+.ps{
+  margin-top:25px;
+
+  font-family:Georgia,serif;
+  font-style:italic;
+
+  font-size:14px;
 }
 
-/* SEND BUTTON */
+/* WHATSAPP */
 
-.send-btn {
-  display: block;
-  width: 100%;
-  margin-top: 25px;
-  padding: 16px 20px;
-  border: none;
-  border-radius: 50px;
-  background: #c83f6b;
-  color: white;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(200,63,107,.25);
+.whatsapp-btn{
+  display:block;
+
+  width:100%;
+
+  margin-top:25px;
+
+  border:none;
+  border-radius:50px;
+
+  padding:16px 18px;
+
+  font-size:18px;
+  font-weight:bold;
+
+  color:white;
+
+  background:#25D366;
+
+  box-shadow:
+    0 9px 22px rgba(37,211,102,.28);
+
+  cursor:pointer;
 }
 
-.send-note {
-  font-size: 12px;
-  margin-top: 9px;
-  color: #98717e;
+.send-note{
+  margin-top:9px;
+  font-size:12px;
+  color:#89616e;
 }
 
-@keyframes heartbeat {
-  0%,100% {
+@keyframes heartbeat{
+  0%,100%{
     transform:scale(1);
   }
 
-  50% {
+  50%{
     transform:scale(1.15);
   }
 }
 
-@keyframes fade {
-  from {
+@keyframes fade{
+  from{
     opacity:0;
-    transform:translateY(10px);
+    transform:translateY(12px);
   }
 
-  to {
+  to{
     opacity:1;
     transform:translateY(0);
   }
 }
 
-@media(max-width:360px) {
-  .food img {
+@media(max-width:360px){
+
+  h1{
+    font-size:27px;
+  }
+
+  .food img{
     height:90px;
   }
 
-  h1 {
-    font-size:27px;
+  .card{
+    padding:27px 17px;
   }
 }
 </style>
@@ -293,10 +442,19 @@ input {
 
 <body>
 
+<div class="floating-hearts">
+<span>❤️</span>
+<span>💕</span>
+<span>🌹</span>
+<span>❤️</span>
+<span>💗</span>
+</div>
+
 
 <!-- INTRO -->
 
 <section class="screen active" id="intro">
+
 <div class="card">
 
 <div class="heart">❤️</div>
@@ -304,20 +462,26 @@ input {
 <h1>Hey Rupsha...</h1>
 
 <p class="romantic">
-Some moments become beautiful simply because they're shared with someone special.
+Some moments become beautiful simply because they're shared with someone special. 🌹
 </p>
 
-<button class="btn primary" onclick="show('question')">
-I have a question for you...
+<button
+class="btn primary"
+onclick="show('question')">
+
+I have a question for you... 💌
+
 </button>
 
 </div>
+
 </section>
 
 
 <!-- QUESTION -->
 
 <section class="screen" id="question">
+
 <div class="card">
 
 <div class="heart">🌷</div>
@@ -325,48 +489,66 @@ I have a question for you...
 <h1>Rupsha...</h1>
 
 <p style="font-size:20px;">
-Would you go on a date with me?
+Would you go on a date with me? ❤️
 </p>
+
 
 <div class="buttons">
 
-<button class="btn primary" id="yesBtn" onclick="show('food')">
-YES
+<button
+class="btn primary"
+id="yesBtn"
+onclick="show('food')">
+
+YES ❤️
+
 </button>
 
-<button class="btn secondary" id="noBtn">
-NO
+
+<button
+class="btn secondary"
+id="noBtn">
+
+NO 🙈
+
 </button>
 
 </div>
 
+
 <p style="font-size:13px;margin-top:10px;">
-Choose carefully...
+Choose carefully 👀
 </p>
 
 </div>
+
 </section>
 
 
 <!-- FOOD -->
 
 <section class="screen" id="food">
+
 <div class="card">
 
-<h2>Okay Rupsha...</h2>
+<h2>Okay Rupsha 😌❤️</h2>
 
 <p>
 Now the really important question...
 </p>
 
 <h2 style="margin-top:12px;">
-What are you craving?
+What are you craving? 🍽️
 </h2>
+
 
 <div class="food-grid">
 
 
-<div class="food" data-name="Pizza" onclick="selectFood(this)">
+<div
+class="food"
+data-name="Pizza"
+onclick="selectFood(this)">
 
 <img
 src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80"
@@ -377,7 +559,10 @@ alt="Pizza">
 </div>
 
 
-<div class="food" data-name="Burger" onclick="selectFood(this)">
+<div
+class="food"
+data-name="Burger"
+onclick="selectFood(this)">
 
 <img
 src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
@@ -388,7 +573,10 @@ alt="Burger">
 </div>
 
 
-<div class="food" data-name="Pasta" onclick="selectFood(this)">
+<div
+class="food"
+data-name="Pasta"
+onclick="selectFood(this)">
 
 <img
 src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=500&q=80"
@@ -399,7 +587,10 @@ alt="Pasta">
 </div>
 
 
-<div class="food" data-name="Fried Chicken" onclick="selectFood(this)">
+<div
+class="food"
+data-name="Fried Chicken"
+onclick="selectFood(this)">
 
 <img
 src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=500&q=80"
@@ -410,7 +601,10 @@ alt="Fried Chicken">
 </div>
 
 
-<div class="food" data-name="Chinese" onclick="selectFood(this)">
+<div
+class="food"
+data-name="Chinese"
+onclick="selectFood(this)">
 
 <img
 src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=500&q=80"
@@ -421,7 +615,10 @@ alt="Chinese">
 </div>
 
 
-<div class="food" data-name="Fuchka" onclick="selectFood(this)">
+<div
+class="food"
+data-name="Fuchka"
+onclick="selectFood(this)">
 
 <img
 src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fuchka%20by%20Mahbub%20Hasan.JPG"
@@ -432,7 +629,10 @@ alt="Fuchka">
 </div>
 
 
-<div class="food" data-name="Chotpoti" onclick="selectFood(this)">
+<div
+class="food"
+data-name="Chotpoti"
+onclick="selectFood(this)">
 
 <img
 src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Chotpoti%20%28cropped%29.jpg"
@@ -443,7 +643,10 @@ alt="Chotpoti">
 </div>
 
 
-<div class="food" data-name="Dessert" onclick="selectFood(this)">
+<div
+class="food"
+data-name="Dessert"
+onclick="selectFood(this)">
 
 <img
 src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=80"
@@ -456,16 +659,25 @@ alt="Dessert">
 </div>
 
 
-<div class="surprise" onclick="surpriseMe(this)">
-🎁 Surprise me
+<div
+class="surprise"
+onclick="surpriseMe(this)">
+
+🎁 Surprise me ❤️
+
 </div>
 
 
-<button class="btn primary next" onclick="foodNext()">
-Continue
+<button
+class="btn primary next"
+onclick="foodNext()">
+
+Continue ❤️
+
 </button>
 
 </div>
+
 </section>
 
 
@@ -480,30 +692,42 @@ Continue
 <h1>When are you free?</h1>
 
 <p>
-Pick a day that works for you. I'll take care of the rest.
+Pick a day that works for you. I'll take care of the rest. ❤️
 </p>
 
 
 <div class="inputBox">
 
-<label>📅 Choose our date</label>
+<label>
+📅 Choose our date
+</label>
 
-<input type="date" id="date">
+<input
+type="date"
+id="date">
 
 </div>
 
 
 <div class="inputBox">
 
-<label>🕐 What time works for you?</label>
+<label>
+🕐 What time works for you?
+</label>
 
-<input type="time" id="time">
+<input
+type="time"
+id="time">
 
 </div>
 
 
-<button class="btn primary next" onclick="finish()">
-It's a date
+<button
+class="btn primary next"
+onclick="finish()">
+
+It's a date ❤️
+
 </button>
 
 </div>
@@ -519,10 +743,12 @@ It's a date
 
 <div class="heart">❤️</div>
 
-<h1>It's a date, Rupsha!</h1>
+<h1>
+It's a date, Rupsha!
+</h1>
 
 <p>
-Well... this just made my day.
+Well... this just made my day. 🌹
 </p>
 
 
@@ -551,17 +777,22 @@ Well... this just made my day.
 Be ready by
 <span id="readyTime"></span>,<br>
 
-I'm coming to get you.
+I'm coming to get you 🚗❤️
 
 </div>
 
 
-<button class="send-btn" onclick="sendToWhatsApp()">
-Send it to me
+<button
+class="whatsapp-btn"
+onclick="sendToWhatsApp()">
+
+Send it to me 💌
+
 </button>
 
+
 <p class="send-note">
-Tap here to send me your choices
+Send your choices to me on WhatsApp 💚
 </p>
 
 
@@ -569,7 +800,7 @@ Tap here to send me your choices
 
 P.S. Normal people would've just texted you.<br>
 
-But you're not someone I wanted to ask in a normal way.
+But you're not someone I wanted to ask in a normal way. 🌹
 
 </p>
 
@@ -585,14 +816,18 @@ let chosenDateText = "";
 let chosenTimeText = "";
 
 
-/* CHANGE SCREEN */
+/* SCREEN */
 
-function show(id) {
+function show(id){
 
-  document.querySelectorAll(".screen")
-  .forEach(x => x.classList.remove("active"));
+  document
+  .querySelectorAll(".screen")
+  .forEach(
+    x => x.classList.remove("active")
+  );
 
-  document.getElementById(id)
+  document
+  .getElementById(id)
   .classList.add("active");
 
   window.scrollTo(0,0);
@@ -600,13 +835,13 @@ function show(id) {
 }
 
 
-/* NO BUTTON RUNS AWAY */
+/* RUNAWAY NO BUTTON */
 
 const noBtn =
 document.getElementById("noBtn");
 
 
-function moveNo() {
+function moveNo(){
 
   const box =
   document.querySelector(".buttons");
@@ -620,23 +855,22 @@ function moveNo() {
   const maxY = 60;
 
   noBtn.style.left =
-  Math.random() * maxX + "px";
+  Math.random()*maxX+"px";
 
   noBtn.style.right =
   "auto";
 
   noBtn.style.top =
-  Math.random() * maxY + "px";
+  Math.random()*maxY+"px";
 
 }
 
 
 noBtn.addEventListener(
 "touchstart",
-function(e) {
+function(e){
 
   e.preventDefault();
-
   moveNo();
 
 });
@@ -650,14 +884,16 @@ moveNo
 
 /* FOOD */
 
-function selectFood(el) {
+function selectFood(el){
 
-  document.querySelectorAll(".food")
+  document
+  .querySelectorAll(".food")
   .forEach(
     x => x.classList.remove("selected")
   );
 
-  document.querySelector(".surprise")
+  document
+  .querySelector(".surprise")
   .classList.remove("selected");
 
   el.classList.add("selected");
@@ -668,9 +904,10 @@ function selectFood(el) {
 }
 
 
-function surpriseMe(el) {
+function surpriseMe(el){
 
-  document.querySelectorAll(".food")
+  document
+  .querySelectorAll(".food")
   .forEach(
     x => x.classList.remove("selected")
   );
@@ -678,17 +915,17 @@ function surpriseMe(el) {
   el.classList.add("selected");
 
   chosenFood =
-  "Surprise me";
+  "Surprise me ❤️";
 
 }
 
 
-function foodNext() {
+function foodNext(){
 
-  if(!chosenFood) {
+  if(!chosenFood){
 
     alert(
-      "You have to pick something first."
+      "You have to pick something first 😌❤️"
     );
 
     return;
@@ -700,7 +937,7 @@ function foodNext() {
 }
 
 
-/* PREVENT PAST DATE */
+/* DATE */
 
 const dateInput =
 document.getElementById("date");
@@ -713,12 +950,12 @@ const localToday =
 today.getFullYear()
 + "-"
 + String(
-    today.getMonth()+1
-  ).padStart(2,"0")
+  today.getMonth()+1
+).padStart(2,"0")
 + "-"
 + String(
-    today.getDate()
-  ).padStart(2,"0");
+  today.getDate()
+).padStart(2,"0");
 
 dateInput.min =
 localToday;
@@ -726,19 +963,24 @@ localToday;
 
 /* FINISH */
 
-function finish() {
+function finish(){
 
   const date =
-  document.getElementById("date").value;
+  document
+  .getElementById("date")
+  .value;
+
 
   const time =
-  document.getElementById("time").value;
+  document
+  .getElementById("time")
+  .value;
 
 
-  if(!date || !time) {
+  if(!date || !time){
 
     alert(
-      "Don't leave me guessing. Pick a date and time."
+      "Don't leave me guessing 😭 Pick a date and time ❤️"
     );
 
     return;
@@ -748,7 +990,7 @@ function finish() {
 
   const dateObj =
   new Date(
-    date + "T00:00:00"
+    date+"T00:00:00"
   );
 
 
@@ -756,20 +998,15 @@ function finish() {
   dateObj.toLocaleDateString(
     "en-US",
     {
-
       weekday:"long",
-
       month:"long",
-
       day:"numeric",
-
       year:"numeric"
-
     }
   );
 
 
-  const [hour,minute] =
+  const parts =
   time.split(":");
 
 
@@ -778,8 +1015,8 @@ function finish() {
 
 
   t.setHours(
-    Number(hour),
-    Number(minute),
+    Number(parts[0]),
+    Number(parts[1]),
     0,
     0
   );
@@ -789,11 +1026,8 @@ function finish() {
   t.toLocaleTimeString(
     "en-US",
     {
-
       hour:"numeric",
-
       minute:"2-digit"
-
     }
   );
 
@@ -834,35 +1068,37 @@ function finish() {
 }
 
 
-/* SEND TO WHATSAPP */
+/* WHATSAPP */
 
-function sendToWhatsApp() {
+function sendToWhatsApp(){
 
   const phone =
   "8801721601772";
 
 
   const message =
-`Okay, it's a date!
+`Okay, it's a date! ❤️
 
 Here's my choice:
 
-Food: ${chosenFood}
-Date: ${chosenDateText}
-Time: ${chosenTimeText}
+🍽️ Food: ${chosenFood}
+📅 Date: ${chosenDateText}
+🕐 Time: ${chosenTimeText}
 
-See you then.`;
+See you then 🌹❤️`;
 
 
-  const url =
+  const whatsappURL =
   "https://wa.me/"
   + phone
   + "?text="
   + encodeURIComponent(message);
 
 
-  window.location.href =
-  url;
+  window.open(
+    whatsappURL,
+    "_blank"
+  );
 
 }
 
